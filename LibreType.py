@@ -80,7 +80,7 @@ class TypingSpeedApp:
                 if typed_text.endswith(' '):
                     actual_word += ' '
                 if words[-1] != actual_word:
-                    paragraph_words[typed_word_index] = f'<span style="color: red;">{actual_word}</span>'
+                    paragraph_words[typed_word_index] = f'{actual_word}'  # Remove the span tag
                     self.current_paragraph = ' '.join(paragraph_words)
                     self.paragraph_label.config(text=self.current_paragraph)
 
