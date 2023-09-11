@@ -53,6 +53,9 @@ class TypingSpeedApp:
         self.words_typed = 0
         self.last_typed_word_index = -1
 
+        # Create the "Next Quote" button
+        self.create_next_quote_button()
+
     def check_typing_speed(self, event):
         typed_text = self.input_box.get()
         if self.current_paragraph.startswith(typed_text):
@@ -86,7 +89,27 @@ class TypingSpeedApp:
 
                 self.last_typed_word_index = typed_word_index
 
+    def next_quote(self):
+        # Get a new random paragraph
+        self.paragraph_index = random.randint(0, len(self.paragraphs) - 1)
+        self.current_paragraph = self.paragraphs[self.paragraph_index]
+
+        # Update the paragraph label to display the new quote
+        self.paragraph_label.config(text=self.current_paragraph)
+
+        # Clear the input box and reset typing speed calculations
+        self.input_box.delete(0, 'end')
+        self.start_time = None
+        self.words_typed = 0
+        self.last_typed_word_index = -1
+
+    def create_next_quote_button(self):
+        # Create the "Next Quote" button and link it to the next_quote method
+        next_quote_button = tk.Button(self.root, text="Next Quote", font=("Helvetica", 12), bg="#FFFFFF", fg="#190617", command=self.next_quote)
+        next_quote_button.pack(pady=10)
+
 if __name__ == "__main__":
     root = tk.Tk()
     app = TypingSpeedApp(root)
     root.mainloop()
+s
