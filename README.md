@@ -78,7 +78,3 @@ The application is implemented in Python using the Tkinter library for the graph
 ## Acknowledgments
 
 The application was developed as a typing practice tool to improve typing skills and increase typing speed. It provides a user-friendly interface and real-time feedback for an enhanced learning experience.
-
----
-
-Feel free to customize and expand upon this documentation as needed for your use in Obsidian or any other note-taking tool.
